@@ -8,6 +8,7 @@ start(_Type, _Args) ->
 	Dispatch = cowboy_router:compile([
         {'_', [
 					{"/", frontend_handler, []},
+					{"/person", person_handler, []},
 					{"/about", cowboy_static, {priv_file, ektp, "static/index.html"}},
 					{"/assets/[...]", cowboy_static, {priv_dir, ektp, "assets",
                 [{mimetypes, cow_mimetypes, all}]}}
